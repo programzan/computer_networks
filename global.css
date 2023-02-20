@@ -22,6 +22,8 @@ body, html {
     background-color: var(--primary-blue);
     margin-bottom: 50px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 90px;
 }
 
@@ -40,7 +42,7 @@ h1, h2, h3, h4 {
 
 .header-title {
     position: absolute;
-    top: 3%;
+    top: 2%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -51,7 +53,7 @@ h1, h2, h3, h4 {
 
 .header-subtitle {
     position: absolute;
-    top: 12%;
+    top: 6%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
