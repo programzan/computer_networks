@@ -11,9 +11,6 @@
 </head>
 <body onload="welcomeMessage()">
 <div class="container">
-    <div onclick="scrollTop()" id="scrollTop" title="Go to Top">
-        <img class="scroll-top" src="../img/btn_up.svg" width="50" height="50" alt="Scroll To Top">
-    </div>
     <div class="container-header">
         <div class="logo">
             <img src="../img/logo.png" width="150" height="90" alt="Лого">
@@ -52,11 +49,12 @@
                     <div class="calendar-wrapper">
                         <table id="calendar">
                             <thead>
-                            <tr>
-                                <td><b>‹</b>
-                                <td colspan="5">
-                                <td><b>›</b>
-                            <tr class="dn"><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+                            <tr class="month-year">
+                                <td colspan="7"></td>
+                            </tr>
+                            <tr class="week-days">
+                                <td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс</td>
+                            </tr>
                             </thead>
                             <tbody></tbody>
                         </table>
@@ -74,7 +72,7 @@
                             <input type="date" id="date-to" required>
                         </div>
                         <div class="form-item">
-                            <button type="submit" onclick="calculateDaysBetween()">Рассчитать</button>
+                            <button type="submit">Рассчитать</button>
                         </div>
                     </form>
                 </div>
@@ -91,6 +89,9 @@
                 <img class="git-logo" src="../img/github-mark.svg" width="50" height="50" alt="Github">
             </a>
         </div>
+        <button id="scrollTop">
+            <img src="../img/btn_up.svg" width="50" height="50" alt="Scroll To Top">
+        </button>
     </div>
 </div>
 </body>

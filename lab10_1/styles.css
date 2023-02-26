@@ -62,28 +62,17 @@
     text-align: center;
     border-spacing: 0;
 }
-#calendar tr.dn td {
-    font-size: 15px;
-}
-#calendar thead tr:last-child {
-    font-size: small;
-    color: #555555;
-}
-#calendar thead tr:nth-child(1) td:nth-child(2) {
-    color: #323232;
-}
-#calendar thead tr:nth-child(1) td:nth-child(1):hover,
-#calendar thead tr:nth-child(1) td:nth-child(3):hover {
-    cursor: pointer;
+#calendar thead tr.month-year td {
+    font-weight: bold;
 }
 #calendar tbody td {
-    color: #2c567a;
+    color: var(--primary-blue);
 }
 #calendar tbody td:nth-child(n+6),
 #calendar .holiday {
-    color: #e78c5c;
+    color: var(--primary-red);
 }
 #calendar tbody td.today {
-    background: #dc0000;
-    color: #fff;
+    background: red;
+    color: var(--light);
 }

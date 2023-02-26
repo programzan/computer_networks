@@ -29,7 +29,8 @@ function calculateDaysBetween() {
     const diffInTime = dateTo.getTime() - dateFrom.getTime();
     const diffInDays =  Math.round(diffInTime / oneDay);
 
-    document.body.innerHTML =
+    const newWindow = window.open("", "Результат расчета", "popup,width=400,height=300");
+    newWindow.document.body.innerHTML =
         `
         <div class="result bg-light border-shadow border-radius">
             <div class="result-title">
@@ -37,10 +38,10 @@ function calculateDaysBetween() {
             </div>
             <div class="result-main">
                 <div class="result-item">
-                    <p>Начальная дата: ${dateFrom}</p>
+                    <p>Начальная дата: ${dateFrom.toLocaleDateString()}</p>
                 </div>
                 <div class="result-item">
-                    <p>Конечная дата: ${dateTo}</p>
+                    <p>Конечная дата: ${dateTo.toLocaleDateString()}</p>
                 </div>
                 <div class="result-item">
                     <strong>Количество дней между датами: ${diffInDays}</strong>
@@ -48,6 +49,7 @@ function calculateDaysBetween() {
             </div>
         </div>
         `
+    newWindow.document.body.style.margin = "5%";
 }
 
 function moveBanner(banner){
@@ -60,36 +62,35 @@ function moveBanner(banner){
 
 
 function calendar(id, year, month) {
-    var Dlast = new Date(year, month + 1, 0).getDate(),
-        D = new Date(year, month, Dlast),
-        DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
-        DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
+    let i;
+    var lastDayOfMonth = new Date(year, month + 1, 0).getDate(),
+        D = new Date(year, month, lastDayOfMonth),
+        lastWeekDayOfMonth = new Date(D.getFullYear(), D.getMonth(), lastDayOfMonth).getDay(),
+        firstWeekDayOfMonth = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
         calendar = '<tr>',
-        month = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-    if (DNfirst != 0) {
-        for (var i = 1; i < DNfirst; i++) calendar += '<td>';
+        months = [  "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+                    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+    if (firstWeekDayOfMonth !== 0) {
+        for (i = 1; i < firstWeekDayOfMonth; i++) calendar += '<td>';
     } else {
-        for (var i = 0; i < 6; i++) calendar += '<td>';
+        for (i = 0; i < 6; i++) calendar += '<td>';
     }
-    for (var i = 1; i <= Dlast; i++) {
-        if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+    for (i = 1; i <= lastDayOfMonth; i++) {
+        if (i === new Date().getDate() &&
+            D.getFullYear() === new Date().getFullYear() &&
+            D.getMonth() === new Date().getMonth()) {
             calendar += '<td class="today">' + i;
         } else {
             calendar += '<td>' + i;
         }
-        if (new Date(D.getFullYear(), D.getMonth(), i).getDay() == 0) {
+        if (new Date(D.getFullYear(), D.getMonth(), i).getDay() === 0) {
             calendar += '<tr>';
         }
     }
-    for (var i = DNlast; i < 7; i++) calendar += '<td> ';
+    for (i = lastWeekDayOfMonth; i < 7; i++) calendar += '<td> ';
     document.querySelector('#' + id + ' tbody').innerHTML = calendar;
-    document.querySelector('#' + id + ' thead td:nth-child(2)').innerHTML = month[D.getMonth()] + ' ' + D.getFullYear();
-    document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.month = D.getMonth();
-    document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.year = D.getFullYear();
-    if (document.querySelectorAll('#' + id + ' tbody tr').length < 6) {
-        // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
-        document.querySelector('#' + id + ' tbody').innerHTML += '<tr><td> <td> <td> <td> <td> <td> <td> ';
-    }
+    document.querySelector(
+        '#' + id + ' thead tr.month-year td').innerHTML = months[D.getMonth()] + ' ' + D.getFullYear();
 }
 
 
@@ -97,14 +98,6 @@ function calendar(id, year, month) {
 currentTime();
 
 calendar("calendar", new Date().getFullYear(), new Date().getMonth());
-// переключатель минус месяц
-document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
-    calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) - 1);
-}
-// переключатель плюс месяц
-document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
-    calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) + 1);
-}
 
 let dx = 1;
 let x = 10;
