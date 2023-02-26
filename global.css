@@ -64,6 +64,41 @@ body, html {
     height: 90px;
 }
 
+.open_menu, .close_menu {
+    margin: 10px;
+    cursor: pointer;
+    transition: 1s;
+    border: none;
+    background-color: inherit;
+}
+
+.open_menu:hover, .close_menu:hover {
+    transform: scale(1.1);
+}
+
+.sidebar-menu {
+    position: fixed;
+    width: 0;
+    height: 90%;
+    left: -250px;
+    top: 90px;
+    z-index: 99;
+    transition: .5s;
+}
+
+.menu-items {
+    padding-inline-start: 0;
+}
+
+.menu-items li {
+    display: block;
+    padding: 10px 10px 10px 20px;
+}
+
+.menu-items li:hover {
+    background-color: var(--secondary-blue);
+}
+
 .container-main {
     height: 80%;
 }

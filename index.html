@@ -10,6 +10,12 @@
 <body>
 <div class="container">
     <div class="container-header">
+        <button id="id_open_menu" class="open_menu" onclick="openNav()">
+            <img src="img/menu_icon.png" alt="Показать меню">
+        </button>
+        <button id="id_close_menu" class="close_menu" onclick="closeNav()" style="display: none">
+            <img src="img/close_menu.png" alt="Скрыть меню">
+        </button>
         <div class="logo">
             <img src="img/logo.png" width="150" height="90" alt="Лого">
         </div>
@@ -17,6 +23,17 @@
             <h1 class="header-title">Лабораторные работы</h1>
             <h2 class="header-subtitle">Дисциплина: «Компьютерные сети»</h2>
         </div>
+    </div>
+    <div id="sidebar" class="sidebar-menu bg-primary-blue">
+        <h3>Список работ</h3>
+        <ul class="menu-items">
+            <a href="./lab7/index.html"><li>ЛР №7</li></a>
+            <a href="./lab8/index.html"><li>ЛР №8</li></a>
+            <a href="./lab9/index.html"><li>ЛР №9</li></a>
+            <a href="./lab10_1/index.html"><li>ЛР №10.1</li></a>
+            <a href="./lab13_1/index.html"><li>ЛР №13.1</li></a>
+            <a href="./lab13_2/index.html"><li>ЛР №13.2</li></a>
+        </ul>
     </div>
     <div class="container-main">
         <div class="grid">
