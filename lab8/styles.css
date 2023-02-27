@@ -1,4 +1,71 @@
-.task {
+.task, .solution {
     margin: 3%;
-    padding: 1%;
+    padding: 2%;
+}
+
+.solution {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.solution-item {
+    margin: 2%;
+    padding: 20px;
+    max-width: min-content;
+}
+
+img.area {
+    border: 2px solid var(--dark)
+}
+
+.rect {
+    width: 200px;
+    height: 200px;
+    display: block;
+    border: 2px solid var(--dark)
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid var(--secondary-red);
+    border-left: 100px solid transparent;
+    margin-top: -202px;
+    margin-left: 2px;
+}
+
+.picture {
+    position: relative;
+    display: inline-block;
+}
+
+img.area {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
+}
+
+.picture::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    z-index: 2;
+}
+
+.clickable-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.clickable-area:hover {
+    cursor: pointer;
 }
