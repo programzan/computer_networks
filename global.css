@@ -54,7 +54,7 @@ body, html {
     background-color: var(--primary-blue);
     margin-bottom: 25px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 90px;
 }
@@ -179,6 +179,12 @@ h1, h2, h3, h4 {
 
 .border-radius{
     border-radius: 25px;
+}
+
+@media screen and (max-width: 850px) {
+    .header {
+        visibility: hidden;
+    }
 }
 
 
