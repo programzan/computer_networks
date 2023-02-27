@@ -1,4 +1,63 @@
-.task {
+.task, .solution {
     margin: 3%;
-    padding: 1%;
+    padding: 2%;
+}
+
+.solution {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.solution-item {
+    margin: 2%;
+    padding: 20px;
+}
+
+.variant {
+    margin: 0 0 15px;
+}
+
+.rect {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--dark);
+    padding: 10px;
+}
+
+#v1r2 {
+    margin-left: -80px;
+    margin-top: 40px;
+    z-index: 1;
+}
+
+#v1r3 {
+    margin-left: -80px;
+    margin-top: 80px;
+    z-index: 2;
+}
+
+#v2r2 {
+    margin-left: -40px;
+    margin-top: 40px;
+    z-index: 1;
+}
+
+#v2r3 {
+    margin-left: -40px;
+}
+
+#v3r1 {
+    margin-right: -40px;
+    margin-top: 40px;
+    z-index: 2;
+}
+
+#v3r2 {
+    margin-right: -40px;
+    margin-top: 20px;
+    z-index: 1;
 }
