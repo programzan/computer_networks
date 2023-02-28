@@ -1,8 +1,25 @@
-h4 {
+.task h4 {
     text-align: left;
+    margin-left: 20px;
 }
 
 .task {
     margin: 3%;
     padding: 1%;
+}
+
+.solution {
+    margin: 3%;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    margin: 0 0 20px;
+    text-align: right;
+    padding-right: 3%;
+    padding-left: 3%;
+    display: flex;
+    justify-content: flex-end;
 }
