@@ -38,7 +38,7 @@
     justify-content: left;
 }
 
-#banner {
+#banner-1 {
     box-shadow: var(--shadow);
     border-radius: 5px;
     width: 200px;
@@ -47,6 +47,32 @@
     font-size: 42px;
     text-align: center;
     padding: 30px 100px;
+    margin-bottom: 20px;
+}
+
+#banner-2 {
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    width: 200px;
+    background-color: var(--primary-green);
+    color: var(--light);
+    font-size: 42px;
+    text-align: center;
+    padding: 30px 100px;
+    animation: move 10s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes move {
+    0% {
+        margin-left: 0;
+    }
+    50% {
+        margin-left: calc(100% - 400px);
+    }
+    100% {
+        margin-left: 0;
+    }
 }
 
 /*================Календарь===============*/

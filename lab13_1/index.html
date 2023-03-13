@@ -84,93 +84,91 @@
                     Осталось времени: 5 мин. 00 сек.
                 </div>
                 <div id="test-result" style="text-align: center"></div>
-                <form onsubmit="testEnd(); return false">
-                    <div class="questions">
-                        <h3>HTML</h3>
-                        <h3>CSS</h3>
-                        <h3>JS</h3>
-                        <div class="question bg-light border-shadow border-radius">
-                            <p class="question-text">
-                                Для чего используют тег <code>div</code>?
-                            </p>
-                            <p><input id="r_11" class="answer" type="radio" name="html-answer" value="1" checked>
-                                <label for="r_11">Для табличной верстки сайта</label>
-                            </p>
-                            <p><input id="r_12" class="answer" type="radio" name="html-answer" value="2">
-                                <label for="r_12">Для блочной верстки сайта</label>
-                            </p>
-                            <p><input id="r_13" class="answer" type="radio" name="html-answer" value="3">
-                                <label for="r_13">Для разделения текста на абзацы</label>
-                            </p>
-                            <p><input id="r_14" class="answer" type="radio" name="html-answer" value="4">
-                                <label for="r_14">Для оформления ссылок</label>
-                            </p>
-                        </div>
-                        <div class="question bg-light border-shadow border-radius">
-                            <p class="question-text">
-                                Для чего нужен CSS?
-                            </p>
-                            <p><input id="r_21" class="answer" type="radio" name="css-answer" value="1" checked>
-                                <label for="r_21">Для работы со стилями во фреймах</label>
-                            </p>
-                            <p><input id="r_22" class="answer" type="radio" name="css-answer" value="2">
-                                <label for="r_22">Для добавления функциональности к странице</label>
-                            </p>
-                            <p><input id="r_23" class="answer" type="radio" name="css-answer" value="3">
-                                <label for="r_23">Для работы со стилями на страницах сайта</label>
-                            </p>
-                            <p><input id="r_24" class="answer" type="radio" name="css-answer" value="4">
-                                <label for="r_24">Для создания разметки на странице</label>
-                            </p>
-                        </div>
-                        <div class="question bg-light border-shadow border-radius">
-                            <p class="question-text">
-                                Какие функции выполняет JavaScript?
-                            </p>
-                            <p><input id="r_31" class="answer" type="radio" name="js-answer" value="1" checked>
-                                <label for="r_31">Выполняет работу с сервером</label>
-                            </p>
-                            <p><input id="r_32" class="answer" type="radio" name="js-answer" value="2">
-                                <label for="r_32">Создает разметку на странице сайта</label>
-                            </p>
-                            <p><input id="r_33" class="answer" type="radio" name="js-answer" value="3">
-                                <label for="r_33">Отвечает за работу с базами данных</label>
-                            </p>
-                            <p><input id="r_34" class="answer" type="radio" name="js-answer" value="4">
-                                <label for="r_34">Отвечает за функции на стороне клиента</label>
-                            </p>
-                        </div>
-                        <div class="question bg-light border-shadow border-radius">
-                            <p class="question-text">
-                                Напишите название тега, при помощи которого в HTML создаются поля ввода.
-                            </p>
-                            <p><label>
-                                <input type="text" placeholder="Введите ответ...">
-                            </label></p>
-                        </div>
-                        <div class="question bg-light border-shadow border-radius">
-                            <p class="question-text">
-                                Какой псевдокласс сработает при установке курсора в текстовое поле?
-                            </p>
-                            <p><label>
-                                <input type="text" placeholder="Введите ответ...">
-                            </label></p>
-                        </div>
-                        <div class="question bg-light border-shadow border-radius">
-                            <p class="question-text">
-                                Расшифруйте часто используемую в JS аббревиатуру DOM.
-                            </p>
-                            <p><label>
-                                <input type="text" placeholder="Введите ответ...">
-                            </label></p>
-                        </div>
+                <div class="questions">
+                    <h3>HTML</h3>
+                    <h3>CSS</h3>
+                    <h3>JS</h3>
+                    <div class="question bg-light border-shadow border-radius">
+                        <p class="question-text">
+                            Для чего используют тег <code>div</code>?
+                        </p>
+                        <p><input id="r_11" class="answer" type="radio" name="html-answer" value="1">
+                            <label for="r_11">Для табличной верстки сайта</label>
+                        </p>
+                        <p><input id="r_12" class="answer" type="radio" name="html-answer" value="2">
+                            <label for="r_12">Для блочной верстки сайта</label>
+                        </p>
+                        <p><input id="r_13" class="answer" type="radio" name="html-answer" value="3">
+                            <label for="r_13">Для разделения текста на абзацы</label>
+                        </p>
+                        <p><input id="r_14" class="answer" type="radio" name="html-answer" value="4">
+                            <label for="r_14">Для оформления ссылок</label>
+                        </p>
                     </div>
-                    <div class="button">
-                        <button id="submit" type="submit" style="display: none">
-                            Завершить
-                        </button>
+                    <div class="question bg-light border-shadow border-radius">
+                        <p class="question-text">
+                            Для чего нужен CSS?
+                        </p>
+                        <p><input id="r_21" class="answer" type="radio" name="css-answer" value="1">
+                            <label for="r_21">Для работы со стилями во фреймах</label>
+                        </p>
+                        <p><input id="r_22" class="answer" type="radio" name="css-answer" value="2">
+                            <label for="r_22">Для добавления функциональности к странице</label>
+                        </p>
+                        <p><input id="r_23" class="answer" type="radio" name="css-answer" value="3">
+                            <label for="r_23">Для работы со стилями на страницах сайта</label>
+                        </p>
+                        <p><input id="r_24" class="answer" type="radio" name="css-answer" value="4">
+                            <label for="r_24">Для создания разметки на странице</label>
+                        </p>
                     </div>
-                </form>
+                    <div class="question bg-light border-shadow border-radius">
+                        <p class="question-text">
+                            Какие функции выполняет JavaScript?
+                        </p>
+                        <p><input id="r_31" class="answer" type="radio" name="js-answer" value="1">
+                            <label for="r_31">Выполняет работу с сервером</label>
+                        </p>
+                        <p><input id="r_32" class="answer" type="radio" name="js-answer" value="2">
+                            <label for="r_32">Создает разметку на странице сайта</label>
+                        </p>
+                        <p><input id="r_33" class="answer" type="radio" name="js-answer" value="3">
+                            <label for="r_33">Отвечает за работу с базами данных</label>
+                        </p>
+                        <p><input id="r_34" class="answer" type="radio" name="js-answer" value="4">
+                            <label for="r_34">Отвечает за функции на стороне клиента</label>
+                        </p>
+                    </div>
+                    <div class="question bg-light border-shadow border-radius">
+                        <p class="question-text">
+                            Напишите название тега, при помощи которого в HTML создаются поля ввода.
+                        </p>
+                        <p><label>
+                            <input class="answer" type="text" placeholder="Введите ответ...">
+                        </label></p>
+                    </div>
+                    <div class="question bg-light border-shadow border-radius">
+                        <p class="question-text">
+                            Какой псевдокласс сработает при установке курсора в текстовое поле?
+                        </p>
+                        <p><label>
+                            <input class="answer" type="text" placeholder="Введите ответ...">
+                        </label></p>
+                    </div>
+                    <div class="question bg-light border-shadow border-radius">
+                        <p class="question-text">
+                            Расшифруйте часто используемую в JS аббревиатуру DOM.
+                        </p>
+                        <p><label>
+                            <input class="answer" type="text" placeholder="Введите ответ...">
+                        </label></p>
+                    </div>
+                </div>
+                <div class="button">
+                    <button id="submit" type="submit" onclick="testEnd()" style="display: none">
+                        Завершить
+                    </button>
+                </div>
                 <div class="button">
                     <button id="resolve" onclick="testResolve()" style="display: none">
                         Начать заново

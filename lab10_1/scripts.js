@@ -7,7 +7,7 @@ function currentTime() {
     let hour = date.getHours(); let min = date.getMinutes(); let sec = date.getSeconds();
     hour = updateTime(hour); min = updateTime(min); sec = updateTime(sec);
     document.getElementById("clock").innerText = hour + ":" + min + ":" + sec;
-    let t = setTimeout(function () {
+    setTimeout(function () {
         currentTime()
     }, 1000);
 }
@@ -63,13 +63,13 @@ function moveBanner(banner){
 
 function calendar(id, year, month) {
     let i;
-    var lastDayOfMonth = new Date(year, month + 1, 0).getDate(),
+    let lastDayOfMonth = new Date(year, month + 1, 0).getDate(),
         D = new Date(year, month, lastDayOfMonth),
         lastWeekDayOfMonth = new Date(D.getFullYear(), D.getMonth(), lastDayOfMonth).getDay(),
         firstWeekDayOfMonth = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
         calendar = '<tr>',
-        months = [  "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-                    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+        months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+            "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
     if (firstWeekDayOfMonth !== 0) {
         for (i = 1; i < firstWeekDayOfMonth; i++) calendar += '<td>';
     } else {
@@ -101,5 +101,5 @@ calendar("calendar", new Date().getFullYear(), new Date().getMonth());
 
 let dx = 1;
 let x = 10;
-let banner = document.getElementById("banner");
+let banner = document.getElementById("banner-1");
 setInterval(() => moveBanner(banner), 1);
