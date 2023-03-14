@@ -79,7 +79,7 @@
                 </div>
                 <div class="solution-item border-shadow border-radius">
                     <h3 class="solution-title">Расчет количества дней между датами</h3>
-                    <form name="date-calculator" onsubmit="calculateDaysBetween()">
+                    <form name="date-calculator" onsubmit="calculateDaysBetween(); return false;">
                         <div class="form-item">
                             <label for="date-from">Введите начальную дату:</label>
                             <input type="date" id="date-from" required>
