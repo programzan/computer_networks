@@ -4,6 +4,8 @@ let timeoutId = 0;
 
 const radioButtons = document.querySelectorAll('input[type="radio"]');
 const textFields = document.querySelectorAll('input[type="text"]');
+const radioQuestions = document.getElementsByClassName('question-radio');
+const textQuestions = document.getElementsByClassName('question-text');
 
 radioButtons.forEach(radioButton => {
     radioButton.addEventListener('click', () => {
@@ -34,31 +36,29 @@ function testEnd() {
     clearTimeout(timeoutId);
     clearInterval(timerId);
 
-    let countQuestions = document.getElementsByClassName('question').length;
-    let questions = document.querySelectorAll('.question');
+    let radioAnswerIds = ['#r_12', '#r_23', '#r_34'];
+    let textAnswers = ['input', 'focus', 'document object model'];
+    let textAnswerIds = ['#text-1', '#text-2', '#text-3'];
+    let countQuestions = radioQuestions.length + textQuestions.length;
     let score = 0;
-    let rightAnswers = ['r_12', 'r_23', 'r_34', 'input', 'focus', 'document object model'];
-    let userAnswer;
 
-    for (let i = 0; i < countQuestions; i++) {
-        if (questions[i].querySelectorAll('.answer')[0].type === "radio") {
-            userAnswer = questions[i].querySelector('.answer:checked');
-            if (userAnswer && userAnswer.id === rightAnswers[i])
-            {
-                score++;
-                questions[i].style.backgroundColor = "var(--primary-green)";
-            } else {
-                questions[i].style.backgroundColor = "var(--primary-red)";
-            }
+    for (let i = 0; i < radioQuestions.length; i++) {
+        if (document.querySelector(radioAnswerIds[i]).checked)
+        {
+            score++;
+            radioQuestions[i].style.backgroundColor = "var(--primary-green)";
         } else {
-            userAnswer = questions[i].querySelector("input[type='text']");
-            if (userAnswer && userAnswer.value === rightAnswers[i])
-            {
-                score++;
-                questions[i].style.backgroundColor = "var(--primary-green)";
-            } else {
-                questions[i].style.backgroundColor = "var(--primary-red)";
-            }
+            radioQuestions[i].style.backgroundColor = "var(--primary-red)";
+        }
+    }
+
+    for (let i = 0; i < textQuestions.length; i++) {
+        if (document.querySelector(textAnswerIds[i]).value === textAnswers[i])
+        {
+            score++;
+            textQuestions[i].style.backgroundColor = "var(--primary-green)";
+        } else {
+            textQuestions[i].style.backgroundColor = "var(--primary-red)";
         }
     }
 
@@ -71,9 +71,11 @@ function testEnd() {
 }
 
 function testResolve() {
-    let questions = document.getElementsByClassName('question');
-    for (let i = 0; i < questions.length; i++) {
-        questions[i].style.backgroundColor = "var(--light)";
+    for (let i = 0; i < radioQuestions.length; i++) {
+        radioQuestions[i].style.backgroundColor = "var(--light)";
+    }
+    for (let i = 0; i < textQuestions.length; i++) {
+        textQuestions[i].style.backgroundColor = "var(--light)";
     }
     radioButtons.forEach(radioButton => {
         radioButton.checked = false;
